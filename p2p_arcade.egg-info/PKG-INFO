@@ -1,0 +1,8 @@
+Metadata-Version: 2.1
+Name: p2p_arcade
+Version: 0.2
+Requires-Dist: python_banyan
+Requires-Dist: arcade
+Requires-Dist: msgpack
+Requires-Dist: zmq
+Requires-Dist: psutil

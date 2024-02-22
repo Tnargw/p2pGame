@@ -1,0 +1,2 @@
+[console_scripts]
+run = p2pArcade.p2pArcade:p2pArcade
