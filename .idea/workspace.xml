@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9e647b11-12c4-4975-8330-2f7f25cac7af" name="Changes" comment="uploading" />
+    <list default="true" id="9e647b11-12c4-4975-8330-2f7f25cac7af" name="Changes" comment="uploading">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/p2pArcade/p2pArcade.py" beforeDir="false" afterPath="$PROJECT_DIR$/p2pArcade/p2pArcade.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -48,6 +51,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.keymap",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -102,7 +106,8 @@
       <workItem from="1708618328150" duration="173000" />
       <workItem from="1708623535829" duration="1617000" />
       <workItem from="1708634376923" duration="3250000" />
-      <workItem from="1708638289360" duration="3618000" />
+      <workItem from="1708638289360" duration="5717000" />
+      <workItem from="1708717850406" duration="3009000" />
     </task>
     <task id="LOCAL-00001" summary="uploading">
       <option name="closed" value="true" />
@@ -112,7 +117,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708641610331</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="uploading">
+      <option name="closed" value="true" />
+      <created>1708656045734</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1708656045734</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
