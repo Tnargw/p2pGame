@@ -81,7 +81,6 @@ class Game(arcade.Window, threading.Thread, BanyanBase):
 
         self.set_subscriber_topic('enable_balls')
         self.set_subscriber_topic('enable_collisions')
-        self.set_subscriber_topic('p0_move')
         self.set_subscriber_topic('p1_move')
         self.set_subscriber_topic('update_ball')
         self.set_subscriber_topic('remove_ball')
@@ -138,24 +137,24 @@ class Game(arcade.Window, threading.Thread, BanyanBase):
     #         self.publish_payload(payload, topic)
 
     def on_key_press(self, button, modifiers):
-        if self.player == 0:
-            if button == arcade.key.UP:
-                payload = {'p0_x':  0, 'p0_y': MOVEMENT_SPEED}
-                topic = 'p0_move'
-                self.publish_payload(payload, topic)
-            if button == arcade.key.DOWN:
-                payload = {'p0_x':  0, 'p0_y': -(MOVEMENT_SPEED)}
-                topic = 'p0_move'
-                self.publish_payload(payload, topic)
-            if button == arcade.key.RIGHT:
-                payload = {'p0_x': MOVEMENT_SPEED, 'p0_y': 0}
-                topic = 'p0_move'
-                self.publish_payload(payload, topic)
-            if button == arcade.key.LEFT:
-                payload = {'p0_x': -(MOVEMENT_SPEED), 'p0_y': 0}
-                topic = 'p0_move'
-                self.publish_payload(payload, topic)
-        elif self.player == 1:
+        # if self.player == 0:
+        #     if button == arcade.key.UP:
+        #         payload = {'p0_x':  0, 'p0_y': MOVEMENT_SPEED}
+        #         topic = 'p0_move'
+        #         self.publish_payload(payload, topic)
+        #     if button == arcade.key.DOWN:
+        #         payload = {'p0_x':  0, 'p0_y': -(MOVEMENT_SPEED)}
+        #         topic = 'p0_move'
+        #         self.publish_payload(payload, topic)
+        #     if button == arcade.key.RIGHT:
+        #         payload = {'p0_x': MOVEMENT_SPEED, 'p0_y': 0}
+        #         topic = 'p0_move'
+        #         self.publish_payload(payload, topic)
+        #     if button == arcade.key.LEFT:
+        #         payload = {'p0_x': -(MOVEMENT_SPEED), 'p0_y': 0}
+        #         topic = 'p0_move'
+        #         self.publish_payload(payload, topic)
+        if self.player == 1:
             if button == arcade.key.UP:
                 payload = {'p1_x':  0, 'p1_y': MOVEMENT_SPEED}
                 topic = 'p1_move'
@@ -269,9 +268,9 @@ class Game(arcade.Window, threading.Thread, BanyanBase):
                                 time.sleep(0.0001)
 
 
-            elif topic == 'p0_move':
-                self.player_sprite.center_x += payload['p0_x']
-                self.player_sprite.center_y += payload['p0_y']
+            # elif topic == 'p0_move':
+            #     self.player_sprite.center_x += payload['p0_x']
+            #     self.player_sprite.center_y += payload['p0_y']
 
             elif topic == 'p1_move':
                 self.player_sprite.center_x += payload['p1_x']
