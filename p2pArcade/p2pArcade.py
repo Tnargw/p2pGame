@@ -12,7 +12,7 @@ from python_banyan.banyan_base import BanyanBase
 
 SPRITE_SCALING_PLAYER = 0.5
 SPRITE_SCALING_BALL = 0.2
-BALL_COUNT = 10
+BALL_COUNT = 1
 PLAYER_COUNT = 2
 SCREEN_WIDTH = 800
 SCREEN_HEIGHT = 600
@@ -51,15 +51,11 @@ class Game(arcade.Window, threading.Thread, BanyanBase):
         self.all_sprites_list = None
         self.ball_list = None
 
-        self.player_0_sprite = None
-
-        self.player_1_sprite = None
+        self.player_sprite = None
 
         self.player = player
 
-        self.score_0 = 0
-
-        self.score_1 = 0
+        self.score = 0
 
         self.set_mouse_visible(False)
 
@@ -88,8 +84,7 @@ class Game(arcade.Window, threading.Thread, BanyanBase):
         self.set_subscriber_topic('p0_move')
         self.set_subscriber_topic('p1_move')
         self.set_subscriber_topic('update_ball')
-        self.set_subscriber_topic('remove_ball_0')
-        self.set_subscriber_topic('remove_ball_1')
+        self.set_subscriber_topic('remove_ball')
 
         arcade.set_background_color(arcade.color.ASH_GREY)
 
@@ -108,17 +103,11 @@ class Game(arcade.Window, threading.Thread, BanyanBase):
         self.all_sprites_list = arcade.SpriteList()
         self.ball_list = arcade.SpriteList()
 
-        self.player_0_sprite = arcade.Sprite(":resources:images/animated_characters/female_person/femalePerson_idle.png",
+        self.player_sprite = arcade.Sprite(":resources:images/animated_characters/female_person/femalePerson_idle.png",
                                            SPRITE_SCALING_PLAYER)
-        self.player_0_sprite.center_x = 50
-        self.player_0_sprite.center_y = 50
-        self.all_sprites_list.append(self.player_0_sprite)
-
-        self.player_1_sprite = arcade.Sprite(":resources:images/animated_characters/female_person/femalePerson_idle.png",
-                                           SPRITE_SCALING_PLAYER)
-        self.player_1_sprite.center_x = 750
-        self.player_1_sprite.center_y = 550
-        self.all_sprites_list.append(self.player_1_sprite)
+        self.player_sprite.center_x = 50
+        self.player_sprite.center_y = 50
+        self.all_sprites_list.append(self.player_sprite)
 
         for i in range(BALL_COUNT):
             ball = Ball(":resources:images/items/coinGold.png",
@@ -138,11 +127,8 @@ class Game(arcade.Window, threading.Thread, BanyanBase):
         arcade.start_render()
         self.all_sprites_list.draw()
 
-        output = f"Score {self.score_0}"
+        output = f"Score {self.score}"
         arcade.draw_text(output, 10, 20, arcade.color.WHITE, 14)
-
-        output = f"Score {self.score_1}"
-        arcade.draw_text(output, 590, 20, arcade.color.WHITE, 14)
 
     # def on_mouse_motion(self, x, y, dx, dy):
     #
@@ -197,7 +183,7 @@ class Game(arcade.Window, threading.Thread, BanyanBase):
 
     def on_mouse_press(self, x, y, button, modifiers):
 
-        if button == arcade.key.SPACE:
+        if button == arcade.MOUSE_BUTTON_LEFT:
             payload = {'go': True}
             self.publish_payload(payload, 'enable_balls')
 
@@ -272,49 +258,32 @@ class Game(arcade.Window, threading.Thread, BanyanBase):
 
                 with self.the_lock:
                     if self.run_collision_detection:
-                        hit_list = arcade.check_for_collision_with_list(self.player_0_sprite, self.ball_list)
+                        hit_list = arcade.check_for_collision_with_list(self.player_sprite, self.ball_list)
 
                         if hit_list:
                             for ball in hit_list:
                                 ball_index = ball.my_index
                                 payload = {'ball': ball_index}
-                                self.publish_payload(payload, 'remove_ball_0')
-
-                                time.sleep(0.0001)
-                    elif self.run_collision_detection:
-                        hit_list = arcade.check_for_collision_with_list(self.player_1_sprite, self.ball_list)
-
-                        if hit_list:
-                            for ball in hit_list:
-                                ball_index = ball.my_index
-                                payload = {'ball': ball_index}
-                                self.publish_payload(payload, 'remove_ball_1')
+                                self.publish_payload(payload, 'remove_ball')
 
                                 time.sleep(0.0001)
 
 
             elif topic == 'p0_move':
-                self.player_0_sprite.center_x += payload['p0_x']
-                self.player_0_sprite.center_y += payload['p0_y']
+                self.player_sprite.center_x += payload['p0_x']
+                self.player_sprite.center_y += payload['p0_y']
 
             elif topic == 'p1_move':
-                self.player_1_sprite.center_x += payload['p1_x']
-                self.player_1_sprite.center_y += payload['p1_y']
+                self.player_sprite.center_x += payload['p1_x']
+                self.player_sprite.center_y += payload['p1_y']
 
-            elif topic == 'remove_ball_0':
+            elif topic == 'remove_ball':
                 with self.the_lock:
                     ball_index = payload['ball']
                     for ball in self.ball_list.sprite_list:
                         if ball_index == ball.my_index:
                             ball.remove_from_sprite_lists()
-                            self.score_0 += 1
-            elif topic == 'remove_ball_1':
-                with self.the_lock:
-                    ball_index = payload['ball']
-                    for ball in self.ball_list.sprite_list:
-                        if ball_index == ball.my_index:
-                            ball.remove_from_sprite_lists()
-                            self.score_1 += 1
+                            self.score += 1
             elif topic == 'enable_balls':
                 self.go = True
             elif topic == 'enable_collisions':
