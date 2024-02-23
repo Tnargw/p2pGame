@@ -4,19 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9e647b11-12c4-4975-8330-2f7f25cac7af" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/p2pGame.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/p2pArcade/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/p2pArcade/p2pArcade.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
-    </list>
+    <list default="true" id="9e647b11-12c4-4975-8330-2f7f25cac7af" name="Changes" comment="uploading" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -114,12 +102,25 @@
       <workItem from="1708618328150" duration="173000" />
       <workItem from="1708623535829" duration="1617000" />
       <workItem from="1708634376923" duration="3250000" />
-      <workItem from="1708638289360" duration="3231000" />
+      <workItem from="1708638289360" duration="3618000" />
     </task>
+    <task id="LOCAL-00001" summary="uploading">
+      <option name="closed" value="true" />
+      <created>1708641610331</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1708641610331</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="uploading" />
+    <option name="LAST_COMMIT_MESSAGE" value="uploading" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
