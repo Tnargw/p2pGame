@@ -136,7 +136,7 @@ class Game(arcade.Window, threading.Thread, BanyanBase):
     #         self.publish_payload(payload, topic)
 
     def on_key_press(self, button, modifiers):
-        if self.player == 1:
+        if self.player == 0:
             if button == arcade.key.UP:
                 payload = {'p1_x':  0, 'p1_y': MOVEMENT_SPEED}
                 topic = 'p1_move'
@@ -166,6 +166,7 @@ class Game(arcade.Window, threading.Thread, BanyanBase):
 
         if button == arcade.MOUSE_BUTTON_LEFT:
             payload = {'go': True}
+            print("Click works")
             self.publish_payload(payload, 'enable_balls')
 
         if self.go:
@@ -209,7 +210,6 @@ class Game(arcade.Window, threading.Thread, BanyanBase):
 
         if self.external_message_processor:
             self.external_message_processor(topic, payload)
-
         else:
             if topic == 'update_balls':
                 the_coordinates = payload['updates']
@@ -232,8 +232,6 @@ class Game(arcade.Window, threading.Thread, BanyanBase):
 
                             if self.ball_list.sprite_list[i].top > SCREEN_HEIGHT:
                                 self.ball_list.sprite_list[i].change_y *= -1
-
-
                         except (TypeError, IndexError):
                             continue
 
@@ -249,7 +247,6 @@ class Game(arcade.Window, threading.Thread, BanyanBase):
 
                                 time.sleep(0.0001)
 
-
             elif topic == 'p1_move':
                 self.player_sprite.center_x += payload['p1_x']
                 self.player_sprite.center_y += payload['p1_y']
@@ -262,6 +259,7 @@ class Game(arcade.Window, threading.Thread, BanyanBase):
                             ball.remove_from_sprite_lists()
                             self.score += 1
             elif topic == 'enable_balls':
+                print("enable_balls true")
                 self.go = True
             elif topic == 'enable_collisions':
                 self.run_collision_detection = True
