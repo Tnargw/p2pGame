@@ -130,7 +130,7 @@ class Game(arcade.Window, threading.Thread, BanyanBase):
         self.all_sprites_list.append(self.player_0_sprite)
 
         self.player_1_sprite = arcade.Sprite(":resources:images/tiles/bridgeB.png",
-                                           SPRITE_SCALING_PLAYER)
+                                           SPRITE_SCALING_PLAYER, angle=180)
         self.player_1_sprite.center_x = SCREEN_WIDTH / 2
         self.player_1_sprite.center_y = 575
         self.all_sprites_list.append(self.player_1_sprite)
