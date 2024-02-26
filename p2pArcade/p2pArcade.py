@@ -247,7 +247,6 @@ class Game(arcade.Window, threading.Thread, BanyanBase):
 
                         if hit_list:
                             for ball in hit_list:
-                                ball.change_x *= -1
                                 ball.change_y *= -1
 
                                 time.sleep(0.0001)
@@ -258,7 +257,6 @@ class Game(arcade.Window, threading.Thread, BanyanBase):
 
                         if hit_list:
                             for ball in hit_list:
-                                ball.change_x *= -1
                                 ball.change_y *= -1
 
                                 time.sleep(0.0001)

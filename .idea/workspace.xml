@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9e647b11-12c4-4975-8330-2f7f25cac7af" name="Changes" comment="Functional Pong">
+    <list default="true" id="9e647b11-12c4-4975-8330-2f7f25cac7af" name="Changes" comment="flipped p1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/p2pArcade/p2pArcade.py" beforeDir="false" afterPath="$PROJECT_DIR$/p2pArcade/p2pArcade.py" afterDir="false" />
     </list>
@@ -141,7 +141,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708731814572</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="flipped p1">
+      <option name="closed" value="true" />
+      <created>1708742887831</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1708742887831</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -150,7 +158,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="uploading" />
     <MESSAGE value="Functional Pong" />
-    <option name="LAST_COMMIT_MESSAGE" value="Functional Pong" />
+    <MESSAGE value="flipped p1" />
+    <option name="LAST_COMMIT_MESSAGE" value="flipped p1" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
