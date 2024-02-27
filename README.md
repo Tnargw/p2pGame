@@ -3,7 +3,7 @@ This program is a simple pong game that utilizes a library called Python Banyan 
 
 The goal of this program was to create a two player game that utilizes networking.
 
-[Software Demo Video](http://youtube.link.goes.here)
+[Software Demo Video](https://www.youtube.com/watch?v=NMrFgnHhtlE)
 
 # Network Communication
 This program was built using a peer-to-peer system that allows the game to send and receive updates from both players in real time.

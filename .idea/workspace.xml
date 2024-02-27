@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9e647b11-12c4-4975-8330-2f7f25cac7af" name="Changes" comment="Needs comments still">
+    <list default="true" id="9e647b11-12c4-4975-8330-2f7f25cac7af" name="Changes" comment="Ready to demo">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/p2pArcade/p2pArcade.py" beforeDir="false" afterPath="$PROJECT_DIR$/p2pArcade/p2pArcade.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,6 +110,9 @@
       <workItem from="1708717850406" duration="3797000" />
       <workItem from="1708964962174" duration="102000" />
       <workItem from="1708976581274" duration="2629000" />
+      <workItem from="1708992539809" duration="846000" />
+      <workItem from="1708993985425" duration="637000" />
+      <workItem from="1708995253468" duration="263000" />
     </task>
     <task id="LOCAL-00001" summary="uploading">
       <option name="closed" value="true" />
@@ -162,7 +162,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708965042316</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Ready to demo">
+      <option name="closed" value="true" />
+      <created>1708992587488</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1708992587488</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -173,7 +181,8 @@
     <MESSAGE value="Functional Pong" />
     <MESSAGE value="flipped p1" />
     <MESSAGE value="Needs comments still" />
-    <option name="LAST_COMMIT_MESSAGE" value="Needs comments still" />
+    <MESSAGE value="Ready to demo" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ready to demo" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
