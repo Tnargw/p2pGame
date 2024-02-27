@@ -1,44 +1,36 @@
 # Overview
+This program is a simple pong game that utilizes a library called Python Banyan to create a instance of the program that a second player can then connect to.
 
-{Important!  Do not say in this section that this is college assignment.  Talk about what you are trying to accomplish as a software engineer to further your learning.}
-
-{Provide a description the networking program that you wrote. Describe how to use your software.  If you did Client/Server, then you will need to describe how to start both.}
-
-{Describe your purpose for writing this software.}
-
-{Provide a link to your YouTube demonstration.  It should be a 4-5 minute demo of the software running (you will need to show two pieces of software running and communicating with each other) and a walkthrough of the code.}
+The goal of this program was to create a two player game that utilizes networking.
 
 [Software Demo Video](http://youtube.link.goes.here)
 
 # Network Communication
+This program was built using a peer-to-peer system that allows the game to send and receive updates from both players in real time.
 
-{Describe the architecture that you used (client/server or peer-to-peer)}
+The program utilizes TCP and uses ports 43125 and 43124.
 
-{Identify if you are using TCP or UDP and what port numbers are used.}
-
-{Identify the format of messages being sent between the client and server or the messages sent between two peers.}
+The program functions by having each client send messages containing topics and payloads to the Banyan Backplane.
+The topic dictates what function the payload is sent to, and the payload is the information to be passed through that function.
 
 # Development Environment
-
-{Describe the tools that you used to develop the software}
-
-{Describe the programming language that you used and any libraries.}
+This program was made in Python.
 
 Required packages:
-- psutil
 - python-banyan
 - arcade
-- p2p-arcade
+- msgpack
+- zmq
+- psutil
 
 # Useful Websites
+The following website is a proof of concept that illistrates not only that the python-banyan library works, but also how to make a simple program using it.
+* [Peer To Peer Gaming With Arcade and Python Banyan](https://mryslab.github.io/bots-in-pieces/python-banyan/arcade/2020/02/21/p2p-arcade-1.html)
 
-{Make a list of websites that you found helpful in this project}
-* [Web Site Name](http://url.link.goes.here)
-* [Web Site Name](http://url.link.goes.here)
+A link to the Python Arcade library.
+* [The Python Arcade Library](https://api.arcade.academy/en/latest/index.html)
 
 # Future Work
-
-{Make a list of things that you need to fix, improve, and add in the future.}
-* Item 1
-* Item 2
-* Item 3
+* Add options to add progressively more balls.
+* Make sprites animated.
+* Add ability for game to be played by up to 4 players.
